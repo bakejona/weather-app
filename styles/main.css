@@ -1,0 +1,241 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #4A90E2, #50B7C1);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: transparent;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+header nav a:hover {
+  color: #A0D7E7;
+}
+header nav button {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+header nav button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.location-search, .forecast-options {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.location-search label, .forecast-options label {
+  font-weight: bold;
+}
+.location-search input, .location-search select, .location-search button, .forecast-options input, .forecast-options select, .forecast-options button {
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+.location-search input::placeholder, .forecast-options input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.location-search button, .forecast-options button {
+  cursor: pointer;
+}
+.location-search button:hover, .forecast-options button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.current-weather-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.condition-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.temp {
+  font-size: 4rem;
+  font-weight: 200;
+  margin: 0.5rem 0;
+}
+
+.feels-like {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.weather-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.weather-info-grid div {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.weather-info-grid div span {
+  font-weight: bold;
+}
+
+.more-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  transition: all 0.5s ease-in-out;
+  max-height: 500px;
+  overflow: hidden;
+}
+.more-details-grid.hidden {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.more-details-grid div {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.more-details-grid div span {
+  font-weight: bold;
+}
+
+.toggle-details-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+.toggle-details-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.forecast-day-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.forecast-day-card:hover {
+  transform: translateY(-5px);
+}
+.forecast-day-card h3 {
+  font-weight: 500;
+  margin-top: 0;
+}
+.forecast-day-card .forecast-temp {
+  font-weight: bold;
+  margin: 0.2rem 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .weather-container {
+    padding: 1rem;
+  }
+  .location-search, .forecast-options {
+    flex-direction: column;
+    width: 100%;
+  }
+  .location-search input, .location-search select, .location-search button, .forecast-options input, .forecast-options select, .forecast-options button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .current-weather-card {
+    max-width: 100%;
+  }
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

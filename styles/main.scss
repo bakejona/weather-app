@@ -1,0 +1,257 @@
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$text-color: #fff;
+$background-gradient-start: #4A90E2;
+$background-gradient-end: #50B7C1;
+$card-bg: rgba(255, 255, 255, 0.2);
+$border-color: rgba(255, 255, 255, 0.3);
+
+body {
+    font-family: $font-stack;
+    background: linear-gradient(135deg, $background-gradient-start, $background-gradient-end);
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: transparent;
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+
+        a {
+            text-decoration: none;
+            color: $text-color;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            &:hover {
+                color: #A0D7E7;
+            }
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: $text-color;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.location-search, .forecast-options {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    label {
+        font-weight: bold;
+    }
+
+    input, select, button {
+        padding: 0.75rem;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: $card-bg;
+        color: $text-color;
+        backdrop-filter: blur(5px);
+    }
+    
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    button {
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.current-weather-card {
+    background-color: $card-bg;
+    backdrop-filter: blur(10px);
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.weather-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.condition-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.temp {
+    font-size: 4rem;
+    font-weight: 200;
+    margin: 0.5rem 0;
+}
+
+.feels-like {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.weather-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    div {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 1rem;
+        border-radius: 10px;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.more-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    transition: all 0.5s ease-in-out;
+    max-height: 500px;
+    overflow: hidden;
+
+    &.hidden {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    div {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 1rem;
+        border-radius: 10px;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.toggle-details-btn {
+    background-color: transparent;
+    color: $text-color;
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.forecast-day-card {
+    background-color: $card-bg;
+    backdrop-filter: blur(10px);
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    h3 {
+        font-weight: 500;
+        margin-top: 0;
+    }
+
+    .forecast-temp {
+        font-weight: bold;
+        margin: 0.2rem 0;
+    }
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .weather-container {
+        padding: 1rem;
+    }
+    .location-search, .forecast-options {
+        flex-direction: column;
+        width: 100%;
+        input, select, button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    .current-weather-card {
+        max-width: 100%;
+    }
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+}
