@@ -28,7 +28,7 @@ function displayWeatherData(data) {
     const detailsDiv = document.getElementById('weather-details');
     detailsDiv.innerHTML = ''; 
 
-    // Current Weather Section (single card at the top)
+    // Current Weather Section
     const currentWeather = data.current;
     const locationInfo = data.location;
     const precip_in = currentWeather.precip_in;
