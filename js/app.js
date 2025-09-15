@@ -9,7 +9,7 @@ document.getElementById('get-weather-btn').addEventListener('click', () => {
 
 async function getWeatherData(location, days) {
     const apiKey = 'e45514bdf702448fa2d211720250809'; 
-    const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=${days}&aqi=yes&alerts=no`;
+    const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=${days}&aqi=yes&alerts=no`;
 
     try {
         const response = await fetch(apiUrl);
